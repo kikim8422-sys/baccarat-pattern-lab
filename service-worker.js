@@ -1,4 +1,4 @@
-const CACHE='baccarat-pattern-lab-v13';
+const CACHE='baccarat-pattern-lab-v14';
 const ASSETS=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE&&k.startsWith('baccarat-pattern-lab-')).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
